@@ -1,7 +1,7 @@
 # The news system
 
-The news system tells each portfolio manager (PM) in Slack what matters to their book as it happens, and keeps
-everything else quiet.
+The news system posts events that touch a portfolio manager's (PM's) holdings to their Slack as they happen, and
+keeps the rest on the platform.
 
 <a href="../screenshots/slack-01-results.png"><img src="../screenshots/slack-01-results.png" alt="A company's results in Slack, with quotes from the earnings call in the thread"></a>
 
@@ -23,7 +23,7 @@ Everpure's results against consensus with its guidance, and quotes from the earn
 
 <a href="../diagrams/news-flow.png"><img src="../diagrams/news-flow.png" alt="An event that fails the free filter is dropped, one judged not worth sending is kept on the platform, and a repeat of what a story already told is not sent; the rest is sent to Slack and reaches the portfolio manager"></a>
 
-What is not worth telling leaves at one of three points.
+The system drops an item at one of three points.
 
 - **26 kinds of event through one entrance.** The rest of the platform hands the news system what happened and the
   time, and the news system decides the level, the channel, the story and who is pinged.
@@ -51,7 +51,7 @@ What is not worth telling leaves at one of three points.
 ## Each message arrives exactly once
 
 Slack's API has no way to say "send this once", so a call that times out leaves the sender not knowing whether
-the message landed. Sending again risks a double and holding back risks a miss. The delivery design removes both
+the message landed. Sending again risks a double and holding back risks a miss. I designed delivery to remove both
 risks.
 
 - **A decision and its message are saved together.** Each message is written in the same database transaction as

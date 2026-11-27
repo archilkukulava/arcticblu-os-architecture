@@ -9,8 +9,8 @@ when a company files, results come out or a thesis condition breaks.
   writes up the best few as one-page cases in the PM's inbox.
 - **It learns the PM's taste.** It turns the reasons a PM gives for dismissing ideas into proposed changes to
   their style profile.
-- **Thesis-break monitoring.** Every thesis carries "warn me if" conditions. They are checked every day and after
-  every report, and the PM is told at once when one breaks.
+- **Thesis-break monitoring.** Every thesis carries "warn me if" conditions. Code checks them daily and after
+  each report, and tells the PM at once when one breaks.
 - **Watch rules.** A PM writes a valuation or chart rule. Code detects that it may be met, and one structured call
   gives the verdict with its reasons.
 - **Reading every filing.** When a company files, code draws the passages that changed and an agent writes the

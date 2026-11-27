@@ -36,6 +36,6 @@ Each portfolio manager (PM) works with **their own lead agent**, which opens ski
 - **Inside Claude.** A remote MCP connector with its own OAuth 2.1 sign-in hands Claude the same question tools,
   run by the same code.
 
-These decisions were informed by [research](sources.md) and tested on the platform's own [evals](evals.md).
+I based these decisions on [research](sources.md) and tested them on the platform's own [evals](evals.md).
 
 [Back to the overview](../README.md)

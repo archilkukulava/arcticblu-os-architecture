@@ -1,10 +1,10 @@
 # The meta-harness
 
 The platform is built by AI coding agents working inside a second agent system that I designed.
-This meta-harness is the layer of instructions, skills, hooks and settings added on top of a coding agent. It is a
-product in its own right, with the same parts as the platform's agents: defined roles, a fixed pipeline,
-guardrails enforced in code, one human approval point, and its own measurements. It turns a sentence of intent
-into tested, deployed software. A person decides, and the rest is automated.
+This meta-harness is the layer of instructions, skills, hooks and settings added on top of a coding agent. I treat
+it as a product, with the same parts as the platform's agents: defined roles, a fixed pipeline, guardrails
+enforced in code, one human approval point, and its own measurements. I describe what I want in a sentence, and
+coding agents take it to tested, deployed software. A person decides, and the rest is automated.
 
 ## The process
 
@@ -63,8 +63,8 @@ production, a deploy that contains a secret is refused, and a failed design chec
 
 ## Measured like a product
 
-A layer like this piles up, and much of it stops being needed as models improve while still costing speed,
-accuracy and tokens. So each piece is measured and stays if it earns its place.
+Rules and checks pile up, and as models improve many of them become dead weight that still costs speed, accuracy
+and tokens. I measure each piece and remove the ones that no longer catch real faults or save time.
 
 - **Where the time goes.** Each piece of work is timed from git history.
 - **What each check catches.** Every failure of the test suite, the browser walks and the agents-against-pages check

@@ -22,9 +22,8 @@ its measured results.
 
 <a href="diagrams/architecture.png"><img src="diagrams/architecture.png" alt="Portfolio managers on top; pages, the lead agent with its tools, and autonomous work beneath them, with guardrails in code above everything a model writes; all of it on one calculation layer over the broker and market data providers"></a>
 
-Agents and pages read the same calculation layer, so a figure an agent quotes is the figure the page shows. Guardrails
-in code check every answer, which is what lets the agents work on their own. A steward in plain code
-watches health, cost and correctness and repairs routine faults by itself.
+Agents and pages read the same calculation layer, so a figure an agent quotes is the figure the page shows. Code
+checks every answer before a portfolio manager sees it, so the agents can work unsupervised.
 
 ## What it looks like
 
@@ -56,11 +55,11 @@ Everpure's results against consensus with its guidance, and quotes from the earn
 - **[The agent system](docs/agent-system.md).** Each portfolio manager has their own lead agent, which briefs
   helper agents for reading and analysis. Its tools call the same code that renders the pages. An agent loop runs
   where the steps are unknown.
-- **[Autonomous work](docs/autonomous-work.md).** The agents do most of their work autonomously. They watch the market and
-  each portfolio manager's book and act on what happens, from a new filing to a broken thesis.
-- **[The news system](docs/news-system.md).** Each portfolio manager is told in Slack what matters to their book, as
-  it happens: news, results, filings, analysts' calls, insiders' trades, unusual moves. Written rules and a model
-  decide what is worth a ping, what is sent quietly and what stays off Slack.
+- **[Autonomous work](docs/autonomous-work.md).** The agents watch the market and each portfolio manager's book, and
+  act on what happens, from a new filing to a broken thesis.
+- **[The news system](docs/news-system.md).** Each portfolio manager hears in Slack about events that touch their
+  holdings, as they happen: news, results, filings, analysts' calls, insiders' trades, unusual moves. Written rules
+  and a model decide what is worth a ping, what is sent without a ping and what stays off Slack.
 - **[Evals](docs/evals.md).** Any change to an agent's instructions, tools or model is measured before it reaches a
   portfolio manager. Two versions are compared blind by judges from two model families.
 - **[Guardrails in code](docs/guardrails.md).** Code prints each figure in an answer from the tool result it came

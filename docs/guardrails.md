@@ -8,11 +8,11 @@ figure and every quote before an answer reaches a portfolio manager (PM).
 <a href="../diagrams/guardrails.png"><img src="../diagrams/guardrails.png" alt="An answer is written with keys in place of numbers, code prints each figure, and every other number is traced to a tool result; an untraced answer goes back to the agent once, and a second one is recorded for review"></a>
 
 **Figures by reference.** The model never types a number. Every figure in a tool result carries a key, such as `f12`. The agent
-writes the key in place of the number, and code prints the value. A copied, rounded or mistyped figure cannot happen.
+writes the key in place of the number, and code prints the value. The model cannot copy, round or mistype a figure.
 
 **Every figure traced.** Before any text reaches a PM, each remaining number is traced to a tool result. Another
 agent's words and web pages never count as a source. An untraced number sends the answer back to the agent once.
-The check never blocks an answer, and what still stands is recorded for review.
+The check never blocks an answer, and logs any number it still cannot trace for review.
 
 **Quotes verified word for word.** The Reader, the agent that opens outside text, answers in an
 API-enforced schema. Code keeps the passages found
